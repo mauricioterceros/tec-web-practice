@@ -27,5 +27,19 @@ namespace PracticeThree.Controllers
         {
             return Ok(_userManager.GetSSN());
         }
+
+        [HttpPost]
+        [Route("users")]
+        public IActionResult CreateUser([FromBody]Logic.Models.User user)
+        {
+            return Ok(_userManager.CreateUser(user));
+        }
+
+        [HttpPut]
+        [Route("users")]
+        public IActionResult UpdateUser([FromBody]Logic.Models.User user)
+        {
+            return Ok(_userManager.UpdateUser(user));
+        }
     }
 }
